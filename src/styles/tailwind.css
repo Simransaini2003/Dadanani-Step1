@@ -1,0 +1,14 @@
+@import 'tailwindcss' source(none);
+@source '../**/*.{js,ts,jsx,tsx}';
+
+@import 'tw-animate-css';
+
+/* ✅ Tailwind theme font */
+@theme {
+  --font-sans: 'Sora', sans-serif;
+}
+
+/* ✅ Apply globally */
+body {
+  font-family: 'Sora', sans-serif;
+}
