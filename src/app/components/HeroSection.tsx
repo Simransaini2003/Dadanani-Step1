@@ -22,6 +22,7 @@ export default function HeroSection({ onRegister }: HeroSectionProps) {
         backgroundImage: `url(${heroBg})`,
       }}
     >
+      
       {/* Overlay */}
       <div className="absolute inset-0 bg-[#FFF8F2]/90 z-0" />
 
