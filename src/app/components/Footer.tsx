@@ -5,12 +5,18 @@ import logo2 from '../../assets/partner2.png';
 import logo4 from '../../assets/partner4.png';
 import logo5 from '../../assets/partner5.png';
 import dadaNaniLogo from "../../assets/dadaNaniLogo.png";
+import bgPattern from '../../assets/muddywall3.jpg';
 
 export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-gradient-to-b from-[#FFF8F2] to-[#FFF0E6] text-gray-800 py-12 border-t border-amber-200 relative overflow-hidden"
+      className="text-gray-800 py-12 border-t border-amber-200 relative overflow-hidden"
+      style={{
+        backgroundImage: `linear-gradient(180deg, rgba(255, 248, 242, 0.45) 0%, rgba(245, 239, 232, 0.4) 100%), url(${bgPattern})`,
+        backgroundSize: 'cover',
+        backgroundAttachment: 'fixed'
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
 
