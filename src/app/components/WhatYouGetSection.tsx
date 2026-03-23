@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Trophy, Award, Users } from 'lucide-react';
+import bgPattern from '../../assets/muddywall3.jpg';
 
 export default function WhatYouGetSection() {
   const fadeInUp = {
@@ -37,7 +38,11 @@ export default function WhatYouGetSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-16 md:py-24 overflow-hidden" style={{
+      backgroundImage: `linear-gradient(to bottom, rgba(255, 248, 242, 0.60) 0%, rgba(245, 239, 232, 0.55) 100%), url(${bgPattern})`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"

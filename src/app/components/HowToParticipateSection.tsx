@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import bgPattern from '../../assets/muddywall3.jpg';
 
 export default function HowToParticipateSection() {
   const fadeInUp = {
@@ -21,7 +22,11 @@ export default function HowToParticipateSection() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-16 md:py-24" style={{
+      backgroundImage: `linear-gradient(135deg, rgba(255, 248, 242, 0.62) 0%, rgba(245, 239, 232, 0.58) 100%), url(${bgPattern})`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <motion.div

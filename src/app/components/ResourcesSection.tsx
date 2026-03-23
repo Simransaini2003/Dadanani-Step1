@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { BookOpen, FileText, PlayCircle, Download } from 'lucide-react';
+import bgPattern from '../../assets/muddywall3.jpg';
 
 export default function ResourcesSection() {
   const resources = [
@@ -11,7 +12,11 @@ export default function ResourcesSection() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16" style={{
+      backgroundImage: `linear-gradient(135deg, rgba(255, 248, 242, 0.72) 0%, rgba(245, 239, 232, 0.67) 100%), url(${bgPattern})`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* Heading */}

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import bgPattern from '../../assets/muddywall3.jpg';
 
 export default function DocumentationThemesSection() {
   const themes = [
@@ -22,7 +23,11 @@ export default function DocumentationThemesSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-gray-50">
+    <section className="py-20 lg:py-28" style={{
+      backgroundImage: `linear-gradient(90deg, rgba(255, 248, 242, 0.82) 0%, rgba(245, 239, 232, 0.78) 100%), url(${bgPattern})`,
+      backgroundSize: 'cover',
+      backgroundAttachment: 'fixed'
+    }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}

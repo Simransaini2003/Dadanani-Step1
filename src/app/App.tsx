@@ -13,11 +13,11 @@ import WhatYouGetSection from './components/WhatYouGetSection';
 import ResourcesSection from './components/ResourcesSection';
 import DocumentationThemesSection from './components/DocumentationThemesSection';
 import Footer from './components/Footer';
-import WaveDivider from './components/WaveDivider';
 
 import StudentRegistrationPage from './pages/StudentRegistrationPage';
 import SchoolRegistrationPage from './pages/SchoolRegistrationPage';
 import AboutUsPage from './pages/AboutUs';
+import bgPattern from '../assets/muddywall3.jpg';
 
 export default function App() {
   const navigate = useNavigate();
@@ -80,18 +80,23 @@ export default function App() {
               <HeroSection onRegister={handleRegister} />
               
               {/* Apply padding only after hero section */}
-              <div className="pt-20 sm:pt-24">
-                <WaveDivider backgroundColor="#f9fafb" />
+              <div className="pt-20 sm:pt-24" style={{
+                backgroundImage: `linear-gradient(180deg, rgba(255, 248, 242, 0.55) 0%, rgba(245, 239, 232, 0.5) 100%), url(${bgPattern})`,
+                backgroundAttachment: 'fixed',
+                backgroundSize: 'cover'
+              }}>
                 <TheProgrammeSection />
-                <WaveDivider backgroundColor="#ffffff" />
                 <HowToParticipateSection />
                 <DocumentationThemesSection />
-                <WaveDivider backgroundColor="#ffffff" />
                 <WhatYouGetSection />
                 <ResourcesSection />
                 
                 {/* The Journey - Editions in Columns */}
-                <section className="py-16 sm:py-20 bg-white relative overflow-hidden">
+                <section className="py-16 sm:py-20 relative overflow-hidden" style={{
+                  backgroundImage: `linear-gradient(to right, rgba(255, 248, 242, 0.65) 0%, rgba(245, 239, 232, 0.6) 100%), url(${bgPattern})`,
+                  backgroundSize: 'cover',
+                  backgroundAttachment: 'fixed'
+                }}>
                   <div className="absolute top-0 left-1/2 w-96 h-96 bg-gray-100 rounded-full blur-3xl opacity-30"></div>
                   
                   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
