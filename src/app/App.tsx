@@ -80,7 +80,7 @@ export default function App() {
               <HeroSection onRegister={handleRegister} />
               
               {/* Apply padding only after hero section */}
-              <div className="pt-20 sm:pt-24" style={{
+              <div className="" style={{
                 backgroundImage: `linear-gradient(180deg, rgba(255, 248, 242, 0.55) 0%, rgba(245, 239, 232, 0.5) 100%), url(${bgPattern})`,
                 backgroundAttachment: 'fixed',
                 backgroundSize: 'cover'

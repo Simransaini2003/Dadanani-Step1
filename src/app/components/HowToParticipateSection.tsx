@@ -56,7 +56,7 @@ export default function HowToParticipateSection() {
                 key={i}
                 variants={fadeInUp}
                 whileHover={{ y: -6 }}
-                className="group relative bg-white p-6 rounded-2xl border border-gray-200 
+                className="group relative bg-white p-6 rounded-2xl border border-white 
                            shadow-sm hover:shadow-xl 
                            hover:border-red-500 
                            transition-all duration-300 overflow-hidden"
@@ -96,7 +96,7 @@ export default function HowToParticipateSection() {
 
           {/* Subtle connector line (desktop only) */}
           <div className="hidden lg:block mt-12 relative">
-            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-200 rounded-full"></div>
+            <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-white rounded-full"></div>
           </div>
 
         </motion.div>
