@@ -12,18 +12,17 @@ export default function StudentRegistrationPage() {
     class: "",
     school: "",
     city: "",
-    district: "", // ✅ added
+    district: "",
     parentEmail: "",
     phone: "",
-    otpEmail: "",
   });
 
-  const handleChange = (e: { target: { name: any; value: any } }) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
   };
@@ -79,18 +78,13 @@ export default function StudentRegistrationPage() {
                 <Input label="Class" name="class" />
                 <Input label="School" name="school" />
 
-                {/* ✅ Separate City & District */}
-                <Input label="City" name="city" />
-                <Input label="District" name="district" />
+                <Input label="Disrict" name="district" />
+                <Input label="City / Town / Village" name="city" />
               </Section>
 
               <Section title="Contact Details">
                 <Input label="Parent Email" name="parentEmail" type="email" />
                 <Input label="Phone Number" name="phone" />
-              </Section>
-
-              <Section title="Email Verification">
-                <Input label="Enter OTP sent to Email" name="otpEmail" />
               </Section>
 
               <button className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition">
@@ -116,7 +110,6 @@ export default function StudentRegistrationPage() {
             <div className="space-y-3 text-sm text-gray-600">
               <p>• Fill all details carefully</p>
               <p>• Use valid parent email</p>
-              <p>• OTP will be sent for verification</p>
               <p>• Double-check your phone number</p>
             </div>
 
@@ -130,7 +123,6 @@ export default function StudentRegistrationPage() {
     </div>
   );
 
-  // 🔹 Input Component
   function Input({ label, name, type = "text" }) {
     return (
       <div>
@@ -149,7 +141,6 @@ export default function StudentRegistrationPage() {
     );
   }
 
-  // 🔹 Section Component
   function Section({ title, children }) {
     return (
       <div>

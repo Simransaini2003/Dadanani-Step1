@@ -20,9 +20,6 @@ export default function Footer() {
 
           {/* Supported By */}
           <div className="flex flex-col items-center md:items-start">
-            <h3 className="text-sm font-semibold text-amber-900 mb-3">
-              Supported by
-            </h3>
 
             <img
               src={dadaNaniLogo}

@@ -9,6 +9,7 @@ export default function SchoolRegistrationPage() {
   const [formData, setFormData] = React.useState({
     schoolName: "",
     city: "",
+    district: "", // ✅ added
     address: "",
     website: "",
     contactPerson: "",
@@ -84,7 +85,8 @@ export default function SchoolRegistrationPage() {
 
               <Section title="School Details">
                 <Input label="School Name" name="schoolName" />
-                <Input label="City" name="city" />
+                <Input label="District" name="district" />
+                <Input label="City/ Town / Village" name="city" /> {/* ✅ added */}
                 <Input label="Address" name="address" full />
                 <Input label="Website" name="website" />
                 <Input label="Contact Person" name="contactPerson" />
@@ -165,7 +167,7 @@ export default function SchoolRegistrationPage() {
     );
   }
 
-  function Section({ title, children }) {
+  function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
       <div>
         <h2 className="text-base font-semibold text-gray-800 mb-4">
