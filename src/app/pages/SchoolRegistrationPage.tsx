@@ -9,7 +9,7 @@ export default function SchoolRegistrationPage() {
   const [formData, setFormData] = React.useState({
     schoolName: "",
     city: "",
-    district: "", // ✅ added
+    district: "",
     address: "",
     website: "",
     contactPerson: "",
@@ -41,9 +41,10 @@ export default function SchoolRegistrationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-20 sm:pt-24">
+    <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
+
       {/* Top Nav */}
-      <div className="max-w-6xl mx-auto px-4 py-6 flex justify-between items-center">
+      <div className="max-w-6xl mx-auto px-4 py-3 sm:py-4">
         <button
           onClick={() => navigate(-1)}
           className="flex items-center gap-2 text-gray-600 hover:text-red-600 transition"
@@ -52,18 +53,19 @@ export default function SchoolRegistrationPage() {
         </button>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 pb-16">
+      <div className="max-w-6xl mx-auto px-4 pb-12">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="flex items-center gap-4 mb-10"
+          className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8"
         >
-          <div className="p-4 bg-red-100 rounded-2xl">
+          <div className="p-3 sm:p-4 bg-red-100 rounded-2xl">
             <Building2 className="text-red-600" />
           </div>
           <div>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900">
               School Registration
             </h1>
             <p className="text-gray-500 text-sm">
@@ -72,21 +74,21 @@ export default function SchoolRegistrationPage() {
           </div>
         </motion.div>
 
-        {/* Main Layout */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        {/* Layout */}
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
 
-          {/* LEFT - FORM */}
+          {/* FORM */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-8 shadow-lg border border-gray-100"
+            className="lg:col-span-2 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 shadow-md border border-gray-100"
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
 
               <Section title="School Details">
                 <Input label="School Name" name="schoolName" />
                 <Input label="District" name="district" />
-                <Input label="City/ Town / Village" name="city" /> {/* ✅ added */}
+                <Input label="City / Town / Village" name="city" />
                 <Input label="Address" name="address" full />
                 <Input label="Website" name="website" />
                 <Input label="Contact Person" name="contactPerson" />
@@ -111,17 +113,17 @@ export default function SchoolRegistrationPage() {
                 <Input label="OTP Phone" name="otpPhone" />
               </Section>
 
-              <button className="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition">
+              <button className="w-full py-3 sm:py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition">
                 Submit Registration
               </button>
             </form>
           </motion.div>
 
-          {/* RIGHT - SUMMARY PANEL */}
+          {/* SIDE PANEL */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 h-fit sticky top-6"
+            className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-md border border-gray-100 h-fit lg:sticky lg:top-24"
           >
             <h3 className="text-lg font-semibold mb-4 text-gray-800">
               Registration Status
@@ -167,7 +169,7 @@ export default function SchoolRegistrationPage() {
     );
   }
 
-  function Section({ title, children }: { title: string; children: React.ReactNode }) {
+  function Section({ title, children }) {
     return (
       <div>
         <h2 className="text-base font-semibold text-gray-800 mb-4">

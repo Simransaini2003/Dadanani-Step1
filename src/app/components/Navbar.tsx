@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 
 import partner1 from "../../assets/partner1.png";
 import partner2 from "../../assets/partner2.png";
-import partner3 from "../../assets/partner3.png";
 import partner4 from "../../assets/partner4.png";
 import partner5 from "../../assets/partner5.png";
 
@@ -15,7 +14,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isScrolled, setIsScrolled] = React.useState(false);
 
-  const partners = [partner1, partner2, partner3, partner4, partner5];
+  const partners = [partner1, partner2, partner4, partner5];
 
   const navItems = [
     { label: "Home", to: "/" },
@@ -25,7 +24,6 @@ export default function Navbar() {
   const handleNavigation = (item) => {
     setIsOpen(false);
 
-    // ✅ HOME CLICK FIX
     if (item.to === "/") {
       if (location.pathname !== "/") {
         navigate("/");
@@ -46,7 +44,6 @@ export default function Navbar() {
     }
   };
 
-  // detect scroll
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -75,20 +72,20 @@ export default function Navbar() {
           }
         `}
       >
-        <div className="w-full px-4 py-3 flex items-center justify-between max-w-7xl mx-auto">
+        <div className="w-full px-4 py-4 flex items-center justify-between max-w-7xl mx-auto">
 
-          {/* LOGOS */}
-          <div className="flex items-center gap-3 sm:gap-5 overflow-x-auto">
+          {/* LOGOS (INCREASED SIZE) */}
+          <div className="flex items-center gap-4 sm:gap-6 overflow-x-auto">
             {partners.map((logo, index) => (
               <motion.div
                 key={index}
-                whileHover={{ scale: 1.1 }}
-                className="flex-shrink-0 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center"
+                whileHover={{ scale: 1.15 }}
+                className="flex-shrink-0 h-12 w-12 sm:h-16 sm:w-16 md:h-18 md:w-18 flex items-center justify-center"
               >
                 <img
                   src={logo}
                   alt={`Partner ${index + 1}`}
-                  className="h-6 sm:h-8 md:h-9 object-contain"
+                  className="h-8 sm:h-10 md:h-12 object-contain"
                 />
               </motion.div>
             ))}
@@ -153,7 +150,7 @@ export default function Navbar() {
       </div>
 
       {/* SPACING FIX */}
-      <div className="h-[80px]"></div>
+      <div className="h-[90px]"></div>
     </>
   );
 }

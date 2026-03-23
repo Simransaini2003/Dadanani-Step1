@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import dadaNaniLogo from "../../assets/dadaNaniLogo.png";
-import heroBg from "../../assets/muddywall.jpg";
-import { BookOpen, Heart, Star, Sparkles } from 'lucide-react';
+import heroBg from "../../assets/muddywall3.jpg";
 
 interface HeroSectionProps {
   onRegister: () => void;
@@ -23,30 +22,17 @@ export default function HeroSection({ onRegister }: HeroSectionProps) {
       }}
     >
       
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-[#FFF8F2]/90 z-0" />
+      {/* ✅ Softer Overlay (reduced opacity) */}
+      <div className="absolute inset-0 bg-white/70 z-0" />
 
-      {/* Glow */}
-      <div className="absolute -top-32 -left-32 w-[300px] h-[300px] bg-red-200/20 blur-[120px]" />
-      <div className="absolute -bottom-32 -right-32 w-[300px] h-[300px] bg-amber-200/20 blur-[120px]" />
+      {/* Optional subtle dark layer for contrast */}
+      <div className="absolute inset-0 bg-black/10 z-0" />
 
-      {/* Floating Icons */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="hidden lg:block absolute top-20 left-10 opacity-20 animate-bounce">
-          <BookOpen className="w-6 h-6 text-[#A26B3F]" />
-        </div>
-        <div className="hidden lg:block absolute top-40 right-20 opacity-20 animate-bounce">
-          <Heart className="w-6 h-6 text-[#C41E3A]" />
-        </div>
-        <div className="hidden lg:block absolute bottom-32 left-20 opacity-20 animate-bounce">
-          <Star className="w-6 h-6 text-[#A9442C]" />
-        </div>
-        <div className="hidden lg:block absolute top-60 left-1/2 opacity-20 animate-bounce">
-          <Sparkles className="w-6 h-6 text-[#C41E3A]" />
-        </div>
-      </div>
+      {/* Softer Glow */}
+      <div className="absolute -top-32 -left-32 w-[250px] h-[250px] bg-red-200/10 blur-[120px]" />
+      <div className="absolute -bottom-32 -right-32 w-[250px] h-[250px] bg-amber-200/10 blur-[120px]" />
 
-      {/* ✅ CENTER CONTENT (slightly moved upward) */}
+      {/* CENTER CONTENT */}
       <div className="relative z-10 w-full flex items-center justify-center min-h-screen text-center">
 
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto -mt-10 sm:-mt-12 md:-mt-16">
@@ -73,7 +59,7 @@ export default function HeroSection({ onRegister }: HeroSectionProps) {
             Dada Nani Festival
           </motion.h1>
 
-          {/* ✅ SINGLE LINE SUBTITLE */}
+          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

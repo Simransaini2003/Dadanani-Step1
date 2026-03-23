@@ -2,7 +2,6 @@ import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import logo1 from '../../assets/partner1.png';
 import logo2 from '../../assets/partner2.png';
-import logo3 from '../../assets/partner3.png';
 import logo4 from '../../assets/partner4.png';
 import logo5 from '../../assets/partner5.png';
 import dadaNaniLogo from "../../assets/dadaNaniLogo.png";
@@ -15,21 +14,58 @@ export default function Footer() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-6">
 
+        {/* 🔝 Dada Nani Logo */}
+        <div className="flex justify-center mb-10">
+          <img
+            src={dadaNaniLogo}
+            alt="Dada Nani Festival"
+            className="h-16 sm:h-20"
+          />
+        </div>
+
         {/* Main Footer */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
 
-          {/* Supported By */}
-          <div className="flex flex-col items-center md:items-start">
+          {/* Left Section */}
+          <div className="flex flex-col items-center md:items-start gap-8">
 
-            <img
-              src={dadaNaniLogo}
-              alt="Potli Productions"
-              className="h-16 mb-3 hover:scale-105 transition"
-            />
+            {/* Organised By */}
+            <div className="text-center md:text-left">
+              <h3 className="text-sm font-semibold text-amber-900 mb-3">
+                Organised by
+              </h3>
 
-            <p className="text-sm text-gray-700 text-center md:text-left max-w-sm">
-              Preserving India's Cultural Heritage, One Story at a Time
-            </p>
+              <img
+                src={logo1}
+                alt="Potli Productions"
+                className="h-16 hover:scale-105 transition"
+              />
+            </div>
+
+            {/* Supported By */}
+            <div className="text-center md:text-left">
+              <h3 className="text-sm font-semibold text-amber-900 mb-3">
+                Supported by
+              </h3>
+
+              <div className="flex gap-4 justify-center md:justify-start">
+                {[logo2, logo4, logo5].map((logo, i) => (
+                  <img
+                    key={i}
+                    src={logo}
+                    alt={`Partner ${i + 1}`}
+                    className="
+                      h-12 sm:h-14
+                      opacity-80 hover:opacity-100 
+                      hover:scale-110 
+                      transition-all duration-300 
+                      mix-blend-multiply
+                    "
+                  />
+                ))}
+              </div>
+            </div>
+
           </div>
 
           {/* Contact */}
@@ -60,33 +96,6 @@ export default function Footer() {
             </div>
           </div>
 
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-amber-200 my-8"></div>
-
-        {/* Organised By */}
-        <div className="mb-10">
-          <h3 className="text-center text-sm font-semibold text-amber-900 mb-6">
-            Organised by
-          </h3>
-
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-            {[logo1, logo2, logo3, logo4, logo5].map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={`Partner ${i + 1}`}
-                className="
-                  h-12 sm:h-14 md:h-16
-                  opacity-80 hover:opacity-100 
-                  hover:scale-110 
-                  transition-all duration-300 
-                  mix-blend-multiply
-                "
-              />
-            ))}
-          </div>
         </div>
 
         {/* Bottom */}
